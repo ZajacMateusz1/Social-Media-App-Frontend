@@ -9,7 +9,7 @@ export default function Login() {
       headerText="Login to your account"
       method="post"
       buttonText="Login"
-      bottomLink="/register"
+      bottomLink="/auth/register"
       bottomLinkMessage="Create new account"
       errorMessage={data?.message ?? ""}
     >

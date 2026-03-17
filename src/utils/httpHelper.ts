@@ -1,10 +1,10 @@
 import type { HTTPError } from "./types";
 
-type HttpSuccess<T> = {
+export type HttpSuccess<T> = {
   data: T;
   ok: true;
 };
-type HTTPNotSuccess = {
+export type HTTPNotSuccess = {
   data: HTTPError;
   ok: false;
 };

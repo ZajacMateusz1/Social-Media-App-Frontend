@@ -11,7 +11,7 @@ export default function Register() {
         headerText="Create new account"
         method="post"
         buttonText="Register"
-        bottomLink="/login"
+        bottomLink="/auth/login"
         bottomLinkMessage="Already have an account?"
         errorMessage={data?.message ?? ""}
       >
