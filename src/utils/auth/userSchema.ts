@@ -20,3 +20,8 @@ export const RegisterFormSchema = RegisterSchema.extend({
   error: "Passwords do not match",
   path: ["repeatPassword"],
 });
+
+export const LoginSchema = z.object({
+  email: z.email(),
+  password: z.string().min(8, { error: "Min password length is 8" }),
+});

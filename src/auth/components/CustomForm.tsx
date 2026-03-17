@@ -15,6 +15,7 @@ interface CustomFormProps {
   buttonText: string;
   bottomLink: string;
   bottomLinkMessage: string;
+  errorMessage: string;
 }
 export default function CustomForm({
   children,
@@ -23,6 +24,7 @@ export default function CustomForm({
   buttonText,
   bottomLink,
   bottomLinkMessage,
+  errorMessage,
 }: CustomFormProps) {
   const navigaton = useNavigation();
   const isSubmitting = navigaton.state === "submitting";
@@ -33,6 +35,7 @@ export default function CustomForm({
         method={method}
         className="flex flex-col items-center w-3/4 max-w-md p-4 rounded-xl shadow-lg bg-white"
       >
+        {errorMessage && <h2 className="text-red-600 m-4">{errorMessage}</h2>}
         {children}
         <Button type="submit" disabled={isSubmitting}>
           {isSubmitting ? "Submitting..." : buttonText}
